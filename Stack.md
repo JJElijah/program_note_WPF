@@ -1,6 +1,10 @@
 ## C#實現堆疊
 
 stack類別
+
+**備註**:
+1. data[++top] => 先執行top+1，後執行data[top]
+2. data[top--] => 先執行data[top]，後執行top-1
 ```c#
  public class stack
     {
