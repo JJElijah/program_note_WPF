@@ -2,25 +2,35 @@
 
 ```c#
 public class TextLine{
-
-    public string text;
     
-    //建構子
-    public TextLine(string text) {
-        this.text = text;
+    public string GetWord(){
+        return "這是父類別的GetWord方法";
     }
-
-    public string GetWord() {...}
-    public virtual string GetText() {...}
+    
+    public virtual string GetText(){
+            return "這是父類別的GetText方法";
+    }
 }
 
 public class MyLine : TextLine {
 
-    //隱藏方法
-    public new string GetWord() {...}
+    public new string GetWord() {
+        return "這是子類別的GetWord方法";
+    }
 
-    //複寫方法，須對應父類別visual函數
-    public override string GetText() {...}
+    public override string GetText() {
+        return "這是子類別的GetText方法";
+    }
+}
+
+static void Main(string[] args){
+
+    MyLine m1 = new MyLine();
+
+    Console.WriteLine(m1.GetWord());
+    Console.WriteLine(m1.GetText());
+
+    Console.ReadKey();
 }
 ```
 
